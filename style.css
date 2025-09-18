@@ -1,0 +1,78 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body {
+  background: #ffffff;
+  color: #111;
+  line-height: 1.6;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+body.dark { background: #111; color: #ddd; }
+
+/* Navigation */
+header nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2rem; background: transparent;
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+}
+nav .logo { font-size: 1.3rem; font-weight: 700; color: inherit; }
+nav .logo span { color: #0077ff; }
+nav ul { display: flex; list-style: none; gap: 1.2rem; }
+nav ul li a { text-decoration: none; color: inherit; font-weight: 500; }
+nav ul li a:hover { color: #0077ff; }
+.nav-buttons { display: flex; gap: 0.8rem; }
+#darkModeToggle, #menuToggle { background: transparent; border: none; color: inherit; font-size: 1.3rem; cursor: pointer; }
+#menuToggle { display: none; }
+.nav-left { display: flex; align-items: center; gap: 0.6rem; }
+.nav-profile { width: 35px; height: 35px; border-radius: 50%; object-fit: cover; }
+
+/* Hero */
+.hero { display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center; padding-top: 60px; }
+.hero-content h2 span { color: #0077ff; }
+.profile-pic { width: 140px; height: 140px; border-radius: 50%; margin-bottom: 1rem; }
+
+/* Buttons */
+.btn-group { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; margin-top: 1.2rem; }
+.btn { padding: 0.6rem 1.2rem; background: #0077ff; color: #fff; border-radius: 8px; font-weight: 500; text-decoration: none; }
+.btn:hover { background: #005fcc; }
+
+/* Cards */
+.card { background: #f8f8f8; border-radius: 12px; padding: 2rem; margin: 2rem auto; max-width: 900px; transition: background 0.4s ease; }
+body.dark .card { background: #1e1e1e; }
+
+/* Skills */
+.skill { margin-bottom: 1.2rem; }
+.bar { background: #ddd; border-radius: 6px; height: 12px; }
+.fill { height: 100%; background: #0077ff; width: 0; border-radius: 6px; transition: width 1.2s ease; }
+
+/* VIDEO: full width of the card, keeps 16:9, covers area */
+.video-container{ width:100%; margin-top:1rem; }
+.video-container video{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  border-radius:10px;
+  background:#000;
+}
+
+/* Footer */
+footer { text-align: center; padding: 1rem; font-size: 0.9rem; color: #666; }
+
+/* Social */
+.social { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.social a { display: flex; align-items: center; gap: 0.5rem; font-size: 1rem; font-weight: 500; text-decoration: none; }
+.whatsapp-link { color: #25D366; }
+.linkedin-link { color: #0A66C2; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  #menuToggle { display: block; }
+  nav ul { position: absolute; top: 60px; right: 0; background: #fff; flex-direction: column; width: 200px; padding: 1rem; border-radius: 8px; display: none; }
+  body.dark nav ul { background: #1e1e1e; }
+  nav ul.active { display: flex; }
+  nav ul li { margin: 0.5rem 0; }
+  .profile-pic { width: 100px; height: 100px; }
+  .video-container video { height: 250px; }
+}
